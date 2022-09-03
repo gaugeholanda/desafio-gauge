@@ -30,3 +30,8 @@ Você terá que criar um endpoint que receba um arquivo e o armazene localmente 
  - Utilize a metodologia de Atomic Design.
 
 # Layout da tela de upload de banners
+<img src="https://github.com/gaugeholanda/desafio-gauge/blob/main/layout%20upload%20before.PNG?raw=true"></img>
+<img src="https://github.com/gaugeholanda/desafio-gauge/blob/main/layout%20upload%20after.PNG?raw=true"></img>
+
+# Instruções para iniciar ambiênte Docker local
+Adicione aqui as intruções para que a equipe de desenvolvimento possa testar o seu projeto.
