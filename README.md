@@ -1,5 +1,22 @@
-# Desafio-gauge
+# Avaliação Técnica
 
+## Instruções
+1.	Clone este repositório em sua máquina
+2.	Crie uma branch com o nome de feature/desafio-gauge a partir da master
+3.	Desenvolva a solução para o problema proposto abaixo utilizando:
+-	Angular 13 ou posterior para o Front End.
+-	Node 16 com Javascript e express.js para o Back End.
+-	MongoDB para o banco de dados.
+-	Toda a infraestrutura em Docker, devendo ser adicionado ao final deste arquivo as instruções para rodar sua solução.
+4.	Crie um pull request para a master.
+
+# Desafio: Sistema Administrativo
+
+Carlos abriu uma pequena startup que possui um marketplace onde seus clientes, que são empresas que trabalham com aluguel de bicicletas elétricas, podem solicitar o cadastro para a startup para criar suas lojas virtuais no marketplace e vender seus produtos. 
+
+Este marketplace já se encontra em produção no qual possui 100 lojas cadastradas que recebem milhares de acesso por dia.
+
+Hoje o processo de cadastro das lojas virtuais é realizado manualmente pela equipe de T.I. e você foi contratado para dar início ao desenvolvimento do sistema administrativo que irá permitir o cadastro e personalização através de um app web. Inicialmente foi priorizado pelo P.O. a funcionalidade de upload de um banner para a loja virtual do cliente.
 
 # Feature iniciando  o sistema administrativo
 
@@ -33,5 +50,5 @@ Você terá que criar um endpoint que receba um arquivo e o armazene localmente 
 <img src="https://github.com/gaugeholanda/desafio-gauge/blob/main/layout%20upload%20before.PNG?raw=true"></img>
 <img src="https://github.com/gaugeholanda/desafio-gauge/blob/main/layout%20upload%20after.PNG?raw=true"></img>
 
-# Instruções para iniciar ambiênte Docker local
-Adicione aqui as intruções para que a equipe de desenvolvimento possa testar o seu projeto.
+# Instruções para iniciar ambiente Docker local
+Adicione aqui as instruções para que a equipe de desenvolvimento possa testar o seu projeto.
