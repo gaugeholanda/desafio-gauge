@@ -1,0 +1,21 @@
+input[type="file"] {
+  display: none;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1vh;
+}
+
+.custom {
+  background-color: #004494;
+  padding: 2vh 7vw;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.txt {
+  color: white;
+}

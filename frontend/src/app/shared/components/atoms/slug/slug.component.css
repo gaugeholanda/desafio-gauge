@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  margin-top: 10vh;
+  justify-content: center;
+}
+
+.slug {
+  outline: none;
+  border-radius: 5px;
+  color: #a7a7a7;
+  border: 1px solid #a7a7a7;
+  width: 17vw;
+  padding: 10px;
+}
