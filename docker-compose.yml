@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+  app:
+    build: ./frontend
+    depends_on:
+      - api
+    ports:
+      - "8080:80"
+    networks:
+      - shared-network
+  api:
+    build: ./backend
+    depends_on:
+      - db
+    ports:
+      - "${PUBLIC_API_PORT}:3000"
+    networks: 
+     - shared-network
+  
+  db:
+    image: mongo
+    restart: always
+    volumes: 
+      - mongodb_data:/data/db
+    environment: 
+      MONGODB_INITDB_ROOT_USERNAME: mongodb
+      MONGODB_INITDB_ROOT_PASSWORD: mongodb
+    ports:
+      - "27017:27017"
+    networks: 
+     - shared-network
+
+networks:
+  shared-network:
+
+volumes: 
+  mongodb_data:

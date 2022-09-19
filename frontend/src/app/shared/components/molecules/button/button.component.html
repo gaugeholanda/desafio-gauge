@@ -1,0 +1,6 @@
+<div class="wrapper">
+  <button class="custom" (click)="openUpload()">
+    <text class="txt" title={{text}}></text>
+  </button>
+  <input id="file-upload" type="file" (change)="uploader.handleFileInput($any($event.target).files)" />
+</div>

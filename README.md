@@ -52,3 +52,10 @@ Você terá que criar um endpoint que receba um arquivo e o armazene localmente 
 
 # Instruções para iniciar ambiente Docker local
 Adicione aqui as instruções para que a equipe de desenvolvimento possa testar o seu projeto.
+
+- Deve-se criar um arquivo .env na raiz do projeto seguindo o exemplo em ".env.example"
+- Caso a porta escolhida no .env na raiz do projeto seja diferente de "3000" deve-se alterar em "frontend\src\environments"
+- OBS: a porta que for configurada no .env da raiz tem que ser identica a configurada nos environments do angular, caso ao contrário não irá funcionar
+- Executar o comando "docker-compose up" na raiz do projeto
+- O frontend ficará disponível em "localhost:8080" conforme a config no docker-compose
+- A api ficará disponível através da configuração do .env
