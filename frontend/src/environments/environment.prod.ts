@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  publicApiPort: 3001
+  publicApiPort: 3000
 };
