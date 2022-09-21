@@ -1,0 +1,21 @@
+{
+  "name": "gauge-api",
+  "version": "1.0.0",
+  "description": "gauge API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thiago Kemp",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "image-size": "^1.0.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.6.1",
+    "morgan": "^1.10.0"
+  }
+}
