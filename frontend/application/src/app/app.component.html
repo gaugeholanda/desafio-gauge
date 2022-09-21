@@ -1,0 +1,67 @@
+
+
+<router-outlet>
+    <form [formGroup]="bannerUploadForm" (ngSubmit)="submit()">
+        <div class="container">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col col-md-6">
+                        <label for="name">Nome do Arquivo</label>
+                        <input formControlName="name"
+                            id="name" 
+                            type="text" 
+                            class="form-control">
+                        <div *ngIf="form.name.touched && form.name.invalid">
+                            <div *ngIf="form.name.errors?.['required']" class="text-danger small">O Nome do Arquivo é obrigatório.</div>
+                            <div *ngIf="form.name.errors?.['minlength']" class="text-danger small">O Nome do Arquivo deve ter ao menos três letras.</div>
+                        </div>
+                    </div>
+                    <div class="col col-md-6">
+                        <label for="name">Nome do Cliente</label>
+                        <input formControlName="customer"
+                            id="customer" 
+                            type="text" 
+                            class="form-control">
+                        <div *ngIf="form.customer.touched && form.customer.invalid">
+                            <div *ngIf="form.customer.errors?.['required']" class="text-danger small">O Nome do Cliente é obrigatório.</div>
+                            <div *ngIf="form.customer.errors?.['minlength']" class="text-danger small">O Nome do Cliente deve ter ao menos três letras.</div>
+                        </div>                    
+                    </div>
+                </div>
+                <div class="col col-md-12">
+                    <label for="file">Arquivo</label>
+                    <input formControlName="file"
+                        id="file" 
+                        type="file" 
+                        class="form-control"
+                        (change)="onFileChange($event)">
+                    <div *ngIf="form.file.touched && form.file.invalid">
+                        <div *ngIf="form.file.errors?.['required']" class="text-danger small">Anexar um arquivo é obrigatório.</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-md-12 p-3 text-center">
+                        <div class="card">
+                            <img [src]="imageSource" *ngIf="imageSource" class="card-img-top mx-auto" style="height: 343px; width:430px">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary" [disabled]="form.file.invalid || form.customer.invalid || form.name.invalid" type="submit">Submit</button>
+                </div>
+            
+            </div>
+        </div>
+    </form>
+    <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title">Tudo certo!</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+      </div>
+    </ng-template>
+</router-outlet>
