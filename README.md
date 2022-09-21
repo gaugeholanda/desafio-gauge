@@ -36,7 +36,7 @@ Você terá que criar um endpoint que receba um arquivo e o armazene localmente 
 - Criar endpoint POST /store/:slug/banners
 - Se a loja com o determinado slug não existir na coleção do banco de dados a mesma deverá ser criada e se existir deverá ser feito uma atualização na mesma com o novo banner.
 - O banner será armazenado localmente.
-- O banner deve ter as dimensões de 343 de largura e 430 de altura.
+- O banner deve ter as dimensões de , de largura e 430 de altura.
 - Somente serão aceitos banners no formato jpg.
 - O slug da empresa cliente não pode ser maior que 30 caracteres e nem conter caracteres especiais.
 - Deverá ser retornado o status code 201 bem como o link do banner salvo localmente na api.
@@ -52,3 +52,8 @@ Você terá que criar um endpoint que receba um arquivo e o armazene localmente 
 
 # Instruções para iniciar ambiente Docker local
 Adicione aqui as instruções para que a equipe de desenvolvimento possa testar o seu projeto.
+
+1 - Acesse a pasta do projeto utilizando o Terminal e execute o script `iniciar-projeto.sh`
+2 - Aguarda alguns instantes para os serviços serem devidamentes iniciados, você pode acompanhar a inicialização de cada container com o comando `docker logs {{NOME_DO_CONTAINER}}`, ex: `docker logs frontend`.
+3 - Acesse o frontend do app em seu navegador http://localhost:8080
+4 - Faça o upload dos arquivos
