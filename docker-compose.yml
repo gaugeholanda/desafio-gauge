@@ -1,0 +1,66 @@
+  version: '3.8'
+  services:
+      # Frontend
+    frontend:
+      build:
+          context: ./frontend
+          dockerfile: Dockerfile
+      profiles: ["dev", "prod", "frontend"]
+      hostname: frontend
+      container_name: frontend
+      restart: unless-stopped
+      tty: true
+      working_dir: /frontend/webserver/
+      command: bash -c "cd /frontend/application/ && npm install && ng build && cd /frontend/webserver/ && npm install && node index.js"
+      environment:
+          TZ: America/Sao_Paulo
+          FRONTEND_HTTP_PORT: ${FRONTEND_HTTP_PORT}
+          FRONTEND_NG_SERVE_PORT: ${FRONTEND_NG_SERVE_PORT}
+      volumes:
+          - ./frontend/webserver/:/frontend/webserver/
+          - ./frontend/application:/frontend/application
+      ports:
+          - "${FRONTEND_HTTP_PORT}:80"
+          - "${FRONTEND_NG_SERVE_PORT}:4200"
+      env_file:
+        - ./.env
+    database:
+      build:
+        context: ./database
+        dockerfile: Dockerfile
+      profiles: ["dev", "prod", "database"]
+      hostname: database
+      container_name: database
+      restart: unless-stopped
+      tty: true
+      working_dir: /
+      environment:
+        TZ: America/Sao_Paulo
+        DATABASE_PORT: ${DATABASE_PORT}
+        MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+        MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      command: mongod
+      volumes:
+        - ./database/data:/data/db
+      env_file:
+        - ./.env
+    api:
+      build:
+        context: ./api
+        dockerfile: Dockerfile
+      profiles: ["dev", "prod", "api"]
+      hostname: api
+      container_name: api
+      restart: unless-stopped
+      tty: true
+      working_dir: /api/application
+      command: bash -c "npm install && node index.js"
+      environment:
+        TZ: America/Sao_Paulo
+        BACKEND_HTTP_PORT: ${BACKEND_HTTP_PORT}
+      volumes:
+        - ./api/application:/api/application
+      env_file:
+            - ./.env
+      ports:
+          - "${BACKEND_HTTP_PORT}:80"

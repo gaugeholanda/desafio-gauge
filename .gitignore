@@ -1,0 +1,10 @@
+.env
+/database/data/*
+/frontend/application/node_modules
+/frontend/webserver/node_modules
+/api/application/uploads/*
+/api/application/node_modules/
+.DS_Store
+/frontend/application/.vscode/
+.browserslistrc
+.editorconfig
